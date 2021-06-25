@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="stylesheets\pomodoro.css" />
+    <link rel="stylesheet" href="stylesheets\schedlist.css" />
+    <link rel="stylesheet" href="stylesheets\styles.css" />
+</head>
+
+<body>
+    <!-- Pomodoro Timer -->
+    <main class="app">
+        <progress id="js-progress" value="0"></progress>
+        <div class="progress-bar"></div>
+        <div class="timer" style="position:fixed;top: 30px; left: 170px;">
+            <div class="button-group mode-buttons" id="js-mode-buttons">
+                <button data-mode="pomodoro" class="button active mode-button" id="js-pomodoro">
+                    Pomodoro
+                </button>
+                <button data-mode="shortBreak" class="button mode-button" id="js-short-break">
+                    Short Break
+                </button>
+                <button data-mode="longBreak" class="button mode-button" id="js-long-break">
+                    Long Break
+                </button>
+            </div>
+            <div class="clock" id="js-clock" style="position:fixed;top: 45px; left: 55px;">
+                <span id="js-minutes">25</span>
+                <span class="separator">:</span>
+                <span id="js-seconds">00</span>
+            </div>
+            <button class="main-button" data-action="start" id="js-btn" style="position:fixed;top: 125px; left: 70px;">
+                Start
+            </button>
+        </div>
+    </main>
+    <div class="hidden">
+        <audio src="audio/ding.mp3" data-sound="pomodoro"></audio>
+        <audio src="audio/ding.mp3" data-sound="shortBreak"></audio>
+        <audio src="audio/ding.mp3" data-sound="longBreak"></audio>
+    </div>
+
+
+    <!-- Sheets Integration w/ List-->
+    <div class="container">
+        <div class="header">
+            <form class="todo-form">
+                <input type="text" class="todo-input" placeholder="">
+                <button type="submit" class="add-button">Add</button>
+            </form>
+        </div>
+        <ul class="todo-items"></ul>
+    </div>
+
+    <div class="schedule">
+        <iframe class="responsive-iframe"
+            src="<insert your own sheet>&amp;range=A1:R9&single=true&widget=true&headers=false&chrome=false">
+        </iframe>
+    </div>
+
+    <div class="goals">
+        <iframe class="responsive-iframe"
+            src="<insert your own sheet>&amp;single=true&widget=true&headers=false&chrome=false">
+        </iframe>
+    </div>
+    <script src="js/pomodoro.js"></script>
+    <script src="js/list.js"></script>
+</body>
+
+</html>

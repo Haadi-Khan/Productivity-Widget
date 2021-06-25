@@ -1,0 +1,143 @@
+/* Item Add Box */
+.container {
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    top: 200px;
+    right: 785px;
+}
+
+.header {
+    background-color: #7289da;
+    box-shadow: #617bda 0px 6px 0px;
+    border-radius: 10px;
+    height: 100px;
+    width: 340px;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    top: 220px;
+    left: 3px;
+}
+.add-button {
+    background-color: #0099e1;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 30px;
+    left: 230px;
+    width: 30%;
+}
+
+.add-button:hover {
+    background-color: #006798;
+}
+
+.todo-input {
+    width: 220px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+    position: relative;
+    top: 0px;
+    left: -50px;
+}
+.todo-form {
+    margin: 0px 0px;
+}
+
+
+/* Items */
+ul {
+    list-style-type: none;
+    position: relative;
+    top: 30px;
+    left: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+.todo-items {
+    top: 140px;
+    position:absolute;
+}
+
+/* each li with class="item" */
+.item {
+    cursor:auto;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #4e6f7b;
+    box-shadow: #466672 0px 6px 0px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 18px;
+    transition: 0.2s;
+    width: 339px;
+    left: 785px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal !important;
+}
+
+.item:hover {
+    background: #45626d;
+    box-shadow: #3b535c 0px 6px 0px;
+}
+
+.item:last-child {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.delete-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #4e6f7b;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 12px 16px 12px 16px;
+    top: 3px;
+}
+
+.delete-button:hover {
+    background-color: #f04747;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+}
+
+/* applied when the todo item is checked */
+.checked {
+    text-decoration: line-through;
+}
+.checked::before {
+    content: '';
+    position: absolute;
+    color: #fff;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}

@@ -1,0 +1,114 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --pomodoro: hsl(223, 25%, 40%);
+    --shortBreak: hsl(48, 23%, 40%);
+    --longBreak: hsl(105, 16%, 40%);
+}
+
+
+
+progress {
+    border-radius: 2px;
+    width: 100%;
+    height: 12px;
+    position: fixed;
+    top: 0;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgba(0, 0, 0, 0.1);
+    ;
+}
+
+progress::-webkit-progress-value {
+    background-color: #00d166;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+
+.clock {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 6rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+.mode-button {
+    font-size: 16px;
+    height: 28px;
+    cursor: pointer;
+    box-shadow: none;
+    font-weight: 300;
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 0px;
+    border-radius: 4px;
+    padding: 2px 12px;
+    background: #2E3034;
+}
+
+.mode-button.active {
+    border-color: #fff;
+}
+
+.main-button {
+    cursor: pointer;
+    box-shadow: #617bda 0px 6px 0px;
+    font-size: 22px;
+    height: 55px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    width: 200px;
+    background-color: #7289da;
+    border-width: initial;
+    border-style: none;
+    margin: 20px 0px 0px;
+    padding: 0px 12px;
+    border-radius: 4px;
+    transition: color 0.5s ease-in-out 0s;
+}
+
+button:focus,
+button:active {
+    outline: none;
+}
+
+.main-button.active {
+    transform: translateY(6px);
+    box-shadow: none;
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 20) {
+    .clock {
+        font-size: 8rem;
+    }
+}
+
